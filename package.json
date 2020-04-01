@@ -1,0 +1,60 @@
+{
+  "name": "electron-builder-template0",
+  "version": "1.0.0",
+  "description": "Template",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-linux-and-windows": "bash buildLinuxAndWin.sh",
+    "build-mac": "electron-builder -m",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.example.electron-boilerplate",
+    "files": [
+      "./src/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build-resources"
+    },
+    "publish": null,
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "AudioVideo"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  },
+  "author": "Muhammad Salar Khan <github.com/TheSalarKhan>",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.0",
+    "electron-builder": "^22.4.1"
+  }
+}
